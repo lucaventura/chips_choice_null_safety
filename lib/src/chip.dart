@@ -89,7 +89,9 @@ class C2Chip<T> extends StatelessWidget {
           : EdgeInsets.symmetric(vertical: 4),
       child: RawChip(
         padding: effectiveStyle.padding,
-        label: label ?? Text(data.label),
+        label: label ?? Text(data.label, overflow: TextOverflow.visible,
+              softWrap: true,
+              maxLines: 5),
         labelStyle:
             TextStyle(color: textColor).merge(effectiveStyle.labelStyle),
         labelPadding: effectiveStyle.labelPadding,
